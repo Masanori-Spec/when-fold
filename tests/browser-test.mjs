@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { copyFile, mkdir, readFile, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -110,6 +111,62 @@ with zipfile.ZipFile(sys.argv[1]) as z:
   execFileSync(process.execPath,['tools/oracle.mjs',actual],{stdio:'inherit'});
   const oracle=JSON.parse(await readFile(path.join(actual,'oracle-report.json'),'utf8')); assert.equal(oracle.status,'passed'); assert.equal(oracle.checks.changedScenarios,1);
 });
+add('actual-downloaded-report-offline-a4-print',async (page,context) => {
+  // The previous case extracted this exact report from the browser download.
+  // Never regenerate it from core objects: this is a real exported-file consumer.
+  const reportFile=path.join(artifactDir,'actual-artifacts','report.html');
+  const reportBytes=await readFile(reportFile);
+  const external=[]; page.on('request',request=>{if(!/^(file:|blob:|data:)/.test(request.url()))external.push(request.url());});
+  await context.setOffline(true);
+  await page.goto(pathToFileURL(reportFile).href);
+  await page.evaluate(()=>document.fonts.ready);
+  assert.equal(await page.locator('h1').innerText(),'WhenFold');
+  const headings=await page.locator('h2').allTextContents();
+  for(const heading of ['Priority','Behavior delta','Export source map','Files'])assert.ok(headings.some(text=>text.includes(heading)),`Missing report heading: ${heading}`);
+  const visible=await page.locator('body').innerText();
+  for(const text of ['3 rules','12 logical contexts','1 behavior changes','platform linux','demo.selection','demo.python','whenfold.focus','whenfold.selection','whenfold.lang','Everyday + Python','Selection pack'])assert.ok(visible.includes(text),`Missing report content: ${text}`);
+  assert.equal(await page.locator('table').count(),2);
+  assert.equal(await page.locator('table').nth(0).locator('tbody tr').count(),1,'Exactly one printed behavior delta');
+  assert.equal(await page.locator('table').nth(1).locator('tbody tr').count(),3,'All three mapped source rules are printed');
+  for(const id of ['s1:r1','s1:r2','s2:r1'])assert.ok((await page.locator('table').nth(1).innerText()).includes(id));
+  assert.deepEqual(external,[],'Report renders offline without external requests');
+  await noOverflow(page);
+  await page.screenshot({path:path.join(artifactDir,'downloaded-report-screen.png'),fullPage:true});
+  await page.emulateMedia({media:'print'});
+  await page.evaluate(()=>document.fonts.ready);
+  await noOverflow(page);
+  const bounds=await page.evaluate(()=>({
+    viewport:innerWidth,documentWidth:document.documentElement.scrollWidth,
+    overflow:Array.from(document.querySelectorAll('table,td,pre')).flatMap(el=>{
+      const box=el.getBoundingClientRect();
+      return box.left < -1 || box.right > innerWidth+1 || el.scrollWidth > el.clientWidth+1 ? [{tag:el.tagName,left:box.left,right:box.right,scroll:el.scrollWidth,client:el.clientWidth}] : [];
+    })
+  }));
+  assert.deepEqual(bounds.overflow,[],'Print media content stays within horizontal bounds');
+  const pdf=path.join(artifactDir,'downloaded-report-A4.pdf');
+  await page.pdf({path:pdf,format:'A4',landscape:true,preferCSSPageSize:true,printBackground:true,displayHeaderFooter:false});
+  const pdfBytes=await readFile(pdf);assert.ok(pdfBytes.length>1000);
+  const info=execFileSync('pdfinfo',[pdf],{encoding:'utf8'});
+  const pages=Number(info.match(/^Pages:\s+(\d+)/m)?.[1]);
+  assert.ok(pages>=1&&pages<=4,`Unexpected fixture page count: ${pages}`);
+  const sizes=execFileSync('pdfinfo',['-f','1','-l',String(pages),pdf],{encoding:'utf8'});
+  const measured=[...sizes.matchAll(/^Page\s+\d+ size:\s+([\d.]+) x ([\d.]+) pts/mg)].map(m=>({width:Number(m[1]),height:Number(m[2])}));
+  assert.equal(measured.length,pages,'Every PDF page size was measured');
+  assert.ok(measured.every(size=>Math.abs(size.width-841.89)<2&&Math.abs(size.height-595.28)<2),'Every page uses A4 landscape');
+  const text=execFileSync('pdftotext',['-layout',pdf,'-'],{encoding:'utf8'});
+  for(const expected of ['WhenFold','3 rules','12 logical contexts','1 behavior changes','Priority','Behavior delta','Export source map','demo.selection','demo.python','s1:r1','s1:r2','s2:r1'])assert.ok(text.includes(expected),`Printed PDF lost content: ${expected}`);
+  const renders=path.join(artifactDir,'report-print-pages');await mkdir(renders,{recursive:true});
+  execFileSync('pdftoppm',['-scale-to','1400','-png',pdf,path.join(renders,'page')]);
+  await writeFile(path.join(renders,'pdfinfo.txt'),sizes);
+  await writeFile(path.join(renders,'text.txt'),text);
+  await writeFile(path.join(artifactDir,'report-print.json'),JSON.stringify({
+    status:'passed',source:'Actual report.html from browser-downloaded ZIP',offline:true,
+    sourceSha256:createHash('sha256').update(reportBytes).digest('hex'),pdfSha256:createHash('sha256').update(pdfBytes).digest('hex'),
+    pages,pageSizes:measured,bounds,externalRequests:external,
+    screenScreenshot:'downloaded-report-screen.png',pdf:'downloaded-report-A4.pdf',renderedPages:'report-print-pages/page-*.png',
+    note:'Automated content and size assertions passed. Rendered pages still require visual inspection.'
+  },null,2)+'\n');
+},{viewport:{width:1123,height:794}});
 add('generic-priority-move-and-reverse',async page => {
   await open(page); await analyze(page); const order=await page.locator('#priority-list .rule-card').evaluateAll(rows=>rows.map(row=>row.dataset.ruleId));
   await moveBottomUp(page); assert.equal(Number(await page.locator('#stat-changes').innerText()),1);
