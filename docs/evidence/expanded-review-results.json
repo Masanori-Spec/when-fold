@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "date": "2026-10-04",
+  "expressionContexts": 97200,
+  "keyDispatches": 3456,
+  "guardResolutionContexts": 9720,
+  "regressions": [
+    "leading caret commands rejected",
+    "negative zero JSON/programmatic args rejected"
+  ],
+  "notRun": [
+    "Chromium execution",
+    "native VS Code execution",
+    "screenshots/visual review"
+  ],
+  "note": "Independent source review with pinned upstream consumer. Finite synthetic tests; not editor reachability, installed extensions, or every later editor version."
+}

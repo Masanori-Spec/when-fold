@@ -1,0 +1,17 @@
+{
+  "name": "fixture",
+  "displayName": "WhenFold disposable fixture",
+  "publisher": "whenfold-test",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {"vscode": "^1.96.4"},
+  "main": "./extension.cjs",
+  "activationEvents": ["*"],
+  "contributes": {
+    "commands": [
+      {"command": "demo.generic", "title": "WhenFold test generic"},
+      {"command": "demo.python", "title": "WhenFold test python"},
+      {"command": "demo.selection", "title": "WhenFold test selection"}
+    ]
+  }
+}

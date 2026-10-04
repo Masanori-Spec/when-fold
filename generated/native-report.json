@@ -1,0 +1,17 @@
+{
+  "status": "not-run",
+  "reason": "Fixture safety and upstream oracle validated; native Electron launch has not run",
+  "oracle": {
+    "contexts": 12,
+    "scenarios": 12,
+    "originalResolution": 12,
+    "exportedResolution": 12,
+    "reversedExportResolution": 12,
+    "declaredPriorityResolution": 12,
+    "disjointGuards": 12,
+    "deltaCsvRows": 1,
+    "changedScenarios": 1,
+    "fallThroughScenarios": 6,
+    "scenariosWithAbsentKeys": 4
+  }
+}

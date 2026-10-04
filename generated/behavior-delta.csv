@@ -1,0 +1,2 @@
+﻿"key","context_json","before_rule","before_command","before_args_present","before_args_json","after_rule","after_command","after_args_present","after_args_json"
+"ctrl+alt+k","{""whenfold.focus"":true,""whenfold.selection"":true,""whenfold.lang"":""python""}","s2:r1","demo.selection","true","{""kind"":""selection""}","s1:r2","demo.python","true","{""kind"":""python"",""nested"":{""preserve"":[""a"",false,null]}}"

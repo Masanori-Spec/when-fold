@@ -1,0 +1,23 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> when-fold@0.1.0 test:review
+> node tests/review-expanded.mjs
+
+{
+  "status": "passed",
+  "date": "2026-10-04",
+  "sourceRoot": "/workspace/scratch/4396daea8a85/when-fold-project",
+  "expressionContexts": 97200,
+  "keyDispatches": 3456,
+  "guardResolutionContexts": 9720,
+  "regressions": [
+    "leading caret commands rejected",
+    "negative zero JSON/programmatic args rejected"
+  ],
+  "notRun": [
+    "Chromium execution",
+    "native VS Code execution",
+    "screenshots/visual review"
+  ],
+  "note": "Independent source review with pinned upstream consumer. Finite synthetic tests; not editor reachability, installed extensions, or every later editor version."
+}

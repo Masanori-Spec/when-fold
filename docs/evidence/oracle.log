@@ -1,0 +1,6 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> when-fold@0.1.0 test:oracle
+> node tools/oracle.mjs
+
+VS Code 1.96.4 upstream oracle passed: 12 scenarios, 1 behavior delta(s), 6 fall-through cases

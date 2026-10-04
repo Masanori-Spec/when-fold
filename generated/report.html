@@ -1,0 +1,18 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'"><title>WhenFold · Shortcut handoff / 引継ぎレポート</title><style>body{font:16px/1.6 system-ui,sans-serif;margin:2rem auto;padding:0 1rem;max-width:1100px;color:#172b28}h1,h2{line-height:1.25}code,pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.82rem}table{border-collapse:collapse;width:100%;table-layout:fixed}td,th{text-align:left;vertical-align:top;padding:.65rem;border:1px solid #b5c7c0;overflow-wrap:anywhere}th{background:#edf4ef}.notice{border-left:5px solid #19766b;background:#edf4ef;padding:1rem}@media print{@page{size:A4 landscape;margin:12mm}body{font-size:10pt}tr{break-inside:avoid}thead{display:table-header-group}}</style><h1>WhenFold</h1><p>Shortcut handoff / ショートカット引継ぎ</p><p>3 rules · 12 logical contexts · 1 behavior changes · platform linux</p><section class="notice"><strong>Coverage / 検証範囲</strong><ul><li>Only the supplied ordered rules; unknown built-ins and extensions are outside coverage.</li><li>Contexts are declared logical combinations, not proof they can occur in the editor.</li><li>Commands and arguments are preserved as data. This tool does not execute commands or change settings.</li><li>Default behavior preserves imported bottom-to-top winners. Changed priorities are explicit user choices.</li><li>Source comments and formatting are not preserved. Review before applying the file.</li><li>単一キー操作・宣言済みコンテキストのみ。未入力の組込み規則、拡張機能、実際の到達可能性は対象外です。</li></ul></section><h2>Priority / 優先順位 (highest first)</h2><pre>{
+  &quot;ctrl+alt+k&quot;: [
+    &quot;s1:r2&quot;,
+    &quot;s2:r1&quot;,
+    &quot;s1:r1&quot;
+  ]
+}</pre><h2>Behavior delta / 動作差分</h2><p>Command and args changes are counted. Changing source identity without changing command/args is not a behavior change. The machine-readable scenarios retain rule IDs and all unchanged/fall-through contexts.</p><table><thead><tr><th>Shortcut</th><th>Logical context</th><th>Before</th><th>After</th></tr></thead><tbody><tr><td>ctrl+alt+k</td><td><code>{&quot;whenfold.focus&quot;:true,&quot;whenfold.selection&quot;:true,&quot;whenfold.lang&quot;:&quot;python&quot;}</code></td><td>demo.selection<pre>{
+  &quot;kind&quot;: &quot;selection&quot;
+}</pre></td><td>demo.python<pre>{
+  &quot;kind&quot;: &quot;python&quot;,
+  &quot;nested&quot;: {
+    &quot;preserve&quot;: [
+      &quot;a&quot;,
+      false,
+      null
+    ]
+  }
+}</pre></td></tr></tbody></table><h2>Export source map / 出力元</h2><table><thead><tr><th>Export row</th><th>Source entry</th><th>Chosen rank</th><th>Guard</th></tr></thead><tbody><tr><td>1</td><td>s1:r1<br>Everyday + Python</td><td>3</td><td><code>(whenfold.focus &amp;&amp; !(((whenfold.focus &amp;&amp; whenfold.lang == &#39;python&#39;) || (whenfold.focus &amp;&amp; whenfold.selection))))</code></td></tr><tr><td>2</td><td>s2:r1<br>Selection pack</td><td>2</td><td><code>((whenfold.focus &amp;&amp; whenfold.selection) &amp;&amp; !((whenfold.focus &amp;&amp; whenfold.lang == &#39;python&#39;)))</code></td></tr><tr><td>3</td><td>s1:r2<br>Everyday + Python</td><td>1</td><td><code>(whenfold.focus &amp;&amp; whenfold.lang == &#39;python&#39;)</code></td></tr></tbody></table><h2>Files / ファイル</h2><p>keybindings.json · original-keybindings.json · source-map.json · behavior-delta.csv · scenarios.json · report.html</p><p>Generated using the standard Boolean guard: original condition AND NOT the union of higher-priority conditions. Disjointness is by construction; finite exhaustive verification is scoped to the declared model. No novelty or measured productivity claim.</p></html>

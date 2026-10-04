@@ -1,0 +1,33 @@
+[
+  {
+    "key": "ctrl+alt+k",
+    "command": "demo.generic",
+    "when": "(whenfold.focus && !(((whenfold.focus && whenfold.lang == 'python') || (whenfold.focus && whenfold.selection))))",
+    "args": {
+      "kind": "generic"
+    }
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "demo.selection",
+    "when": "((whenfold.focus && whenfold.selection) && !((whenfold.focus && whenfold.lang == 'python')))",
+    "args": {
+      "kind": "selection"
+    }
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "demo.python",
+    "when": "(whenfold.focus && whenfold.lang == 'python')",
+    "args": {
+      "kind": "python",
+      "nested": {
+        "preserve": [
+          "a",
+          false,
+          null
+        ]
+      }
+    }
+  }
+]

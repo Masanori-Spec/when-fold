@@ -1,0 +1,37 @@
+{
+  "stage": "source-review-ready",
+  "date": "2026-10-04",
+  "local": {
+    "build": "passed",
+    "nodeTests": {
+      "passed": 146,
+      "failed": 0
+    },
+    "upstreamOracle": {
+      "status": "passed",
+      "version": "1.96.4",
+      "fixtureContexts": 12,
+      "changedContexts": 1,
+      "seededArtifactProjects": 48,
+      "seededContextKeyCases": 5184
+    },
+    "zipConsumer": "passed",
+    "browserCollection": {
+      "status": "passed",
+      "count": 14
+    },
+    "browserExecution": "not-run",
+    "nativeFixtureValidation": "passed",
+    "nativeEditorExecution": "not-run",
+    "visualReview": "not-run",
+    "expandedReview": {
+      "status": "passed",
+      "expressionContexts": 97200,
+      "canonicalKeyDispatches": 3456,
+      "guardResolutionContexts": 9720,
+      "packs": 120
+    }
+  },
+  "hostedCI": "not-run",
+  "publication": "not-performed"
+}

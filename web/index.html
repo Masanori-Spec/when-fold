@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; frame-src blob:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="WhenFold is an offline, finite-model workbench for reviewing and compiling overlapping VS Code keybinding rules.">
+  <title>WhenFold — Keybinding workbench</title>
+  <style>/*STYLE*/</style>
+</head>
+<body>
+  <a class="skip-link" href="#workspace" data-i18n="skip">ワークスペースへ</a>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="WhenFold home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>WhenFold<span class="edition">WORKBENCH / 01</span></a>
+    <div class="header-tools"><span class="local-badge"><span aria-hidden="true"></span><span data-i18n="local">端末内で完結</span></span><button id="language" class="language" type="button" aria-label="Switch language to English">EN <span aria-hidden="true">↗</span></button></div>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="hero-title">
+      <div><p class="eyebrow" data-i18n="eyebrow">KEYBINDINGS, UNTANGLED.</p><h1 id="hero-title" data-i18n="hero">そのキーの優先順位を、<br>意図どおりに。</h1><p class="intro-copy" data-i18n="intro">重なる条件を見つけ、勝つルールを選び、変更を確かめる。VS Code のキーバインドを、有限のコンテキストモデルで整理します。</p></div>
+      <aside class="method-card"><span class="method-number" aria-hidden="true">01 → 02 → 03</span><p data-i18n="method">読み込む。優先する。<br>振る舞いまで、持ち出す。</p><span class="method-foot" data-i18n="methodFoot">JSON IN · REVIEW · ZIP OUT</span></aside>
+    </section>
+    <div class="workspace-top"><h2 id="workspace" tabindex="-1" data-i18n="workspace">ルールのワークスペース</h2><span id="state-pill" class="state-pill" data-i18n="notAnalyzed">未解析</span></div>
+    <div class="workspace-grid">
+      <section class="panel input-panel" aria-labelledby="input-heading">
+        <div class="panel-heading"><div><p class="step-label">01 / INPUT</p><h3 id="input-heading" data-i18n="project">プロジェクト</h3></div><span class="panel-symbol" aria-hidden="true">{ }</span></div>
+        <p class="panel-description" data-i18n="inputHelp">複数ソースのルールと、確認する値の範囲をひとつの JSON に。</p>
+        <div class="input-actions"><label for="project-file" class="button secondary" data-i18n="loadFile">JSON を開く</label><input id="project-file" class="file-input" type="file" accept=".json,application/json"><button id="example" class="button subtle" type="button" data-i18n="example">サンプルに戻す</button></div>
+        <label for="project-input" class="field-label" data-i18n="projectJSON">プロジェクト JSON</label><textarea id="project-input" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="project-help"></textarea>
+        <p id="project-help" class="microcopy" data-i18n="projectHelp">ソースの後方のルールが初期状態では優先されます。編集すると以前の結果は無効になります。</p>
+        <details class="snippet-details"><summary data-i18n="addSnippet">別のルールを追加</summary><div class="snippet-fields"><label for="source-name" class="field-label" data-i18n="sourceName">ソース名</label><input id="source-name" type="text" value="my-keybindings.json" maxlength="100"><label for="snippet-input" class="field-label" data-i18n="snippetLabel">ルール配列（JSONC 可）</label><textarea id="snippet-input" spellcheck="false" placeholder='[{ "key": "ctrl+k", "command": "my.command" }]'></textarea><button id="append" class="button secondary" type="button" data-i18n="append">ソースとして追加</button></div></details>
+        <button id="analyze" class="button primary analyze-button" type="button"><span data-i18n="analyze">モデルを解析</span><span aria-hidden="true">↗</span></button>
+        <div id="status" role="status" aria-live="polite" aria-atomic="true" class="status" data-i18n="initialStatus">サンプルを用意しました。解析して、重なりを確認しましょう。</div>
+      </section>
+      <div class="results-column">
+        <section class="stats-grid" aria-label="Analysis summary"><div class="stat"><span id="stat-rules">—</span><p data-i18n="rules">ルール</p></div><div class="stat"><span id="stat-contexts">—</span><p data-i18n="contexts">モデルの文脈</p></div><div class="stat"><span id="stat-overlaps">—</span><p data-i18n="overlaps">重なるペア</p></div><div class="stat accent"><span id="stat-changes">—</span><p data-i18n="changes">変わる結果</p></div></section>
+        <section class="panel priority-panel" aria-labelledby="priority-heading">
+          <div class="panel-heading"><div><p class="step-label">02 / RESOLVE</p><h3 id="priority-heading" data-i18n="priority">勝つルールを、上へ。</h3></div><span class="small-note" data-i18n="highestFirst">上ほど優先</span></div>
+          <div id="empty-state" class="empty-state"><div class="empty-stack" aria-hidden="true"><span>⌘ K <i></i></span><span>⌘ K <i></i></span><span>⌘ K <i></i></span></div><h4 data-i18n="emptyTitle">条件の重なりを、見える形に。</h4><p data-i18n="emptyCopy">プロジェクトを解析すると、キーごとの優先順位、ルールの出所、変更される結果がここに表示されます。</p></div>
+          <div id="priority-content" hidden><div class="group-picker"><label for="group-select" data-i18n="keyGroup">キーを選択</label><select id="group-select"></select><span id="group-count" class="microcopy"></span></div><p class="priority-help" data-i18n="priorityHelp">↑ ↓ で優先順位を変更。結果は即座に再計算されます。ルール名を選ぶと詳細を確認できます。</p><ol id="priority-list" class="priority-list"></ol><div class="compiler-note"><span aria-hidden="true">↳</span><p data-i18n="compilerNote">下位ルールから上位ルールの条件を除外し、モデル内で同時に勝たないルールに変換します。</p></div></div>
+        </section>
+        <section id="inspection-panel" class="panel inspection-panel" aria-labelledby="inspection-heading" hidden><div class="panel-heading"><div><p class="step-label">RULE INSPECTOR</p><h3 id="inspection-heading" data-i18n="inspector">ルールの出所と条件</h3></div><span id="selected-id" class="mono-pill"></span></div><div id="rule-detail"></div></section>
+      </div>
+    </div>
+    <section id="review-section" class="review-grid" hidden>
+      <section class="panel" aria-labelledby="overlap-heading"><div class="panel-heading"><div><p class="step-label">EVIDENCE / OVERLAPS</p><h3 id="overlap-heading" data-i18n="witnessTitle">重なりの証拠</h3></div><span id="witness-count" class="round-count"></span></div><p class="panel-description" data-i18n="witnessHelp">同時に成立する条件の例です。実際のエディタで到達できる状態とは限りません。</p><div id="witness-list" class="witness-list"></div></section>
+      <section class="panel" aria-labelledby="delta-heading"><div class="panel-heading"><div><p class="step-label">03 / VERIFY</p><h3 id="delta-heading" data-i18n="deltaTitle">変更のプレビュー</h3></div><span class="review-dot" aria-hidden="true"></span></div><p class="panel-description" data-i18n="deltaHelp">読み込み順での結果と、選んだ優先順位での結果を比較します。選択したモデル内だけの比較です。</p><div id="delta-list"></div></section>
+    </section>
+    <section class="export-panel" aria-labelledby="export-heading"><div class="export-copy"><p class="step-label">TAKE IT WITH YOU</p><h2 id="export-heading" data-i18n="exportTitle">判断の根拠ごと、書き出す。</h2><p data-i18n="exportCopy">keybindings.json · ソースマップ · シナリオ · 変更 CSV · HTML レポート</p></div><div class="export-actions"><label class="sr-only" for="export-format" data-i18n="exportFormat">書き出し形式</label><select id="export-format" class="export-select" disabled><option value="zip" data-i18n="zipOption">ZIP · 全 6 ファイル</option><option value="keybindings.json">keybindings.json</option><option value="original-keybindings.json">original-keybindings.json</option><option value="source-map.json">source-map.json</option><option value="scenarios.json">scenarios.json</option><option value="behavior-delta.csv">behavior-delta.csv</option><option value="report.html">report.html</option></select><button id="report" class="button light-outline" type="button" disabled data-i18n="previewReport">レポートを見る</button><button id="download" class="button mint" type="button" disabled><span data-i18n="download">ZIP をダウンロード</span><span aria-hidden="true">↓</span></button></div></section>
+    <details class="scope-details" open><summary data-i18n="scopeHeading">このワークベンチが保証する範囲</summary><div class="scope-grid"><p data-i18n="scopeOne">最大 100 ルール、4,096 個の型付き有限コンテキスト。単一ストロークのキーのみ。宣言したモデルと対応する条件式の範囲で解析します。</p><p data-i18n="scopeTwo">未知の組み込み・拡張機能のルール、実際のキーボード配列、エディタの到達可能状態は対象外です。コメントや元の整形は保存されません。</p><p data-i18n="scopeThree">コマンドの実行、VS Code の設定変更、外部送信は行いません。出力を確認し、バックアップを取ってから手動で導入してください。</p></div></details>
+  </main>
+  <footer><span>WhenFold <span class="footer-dot">/</span> <span data-i18n="footer">優先順位を、明示する。</span></span><span data-i18n="footerLocal">依存なし。送信なし。オフライン対応。</span></footer>
+  <dialog id="report-dialog" aria-labelledby="report-title"><div class="dialog-heading"><h2 id="report-title" data-i18n="reportTitle">解析レポート</h2><button id="close-report" class="button secondary" type="button" data-i18n="close">閉じる</button></div><iframe id="report-frame" title="WhenFold analysis report" sandbox="" referrerpolicy="no-referrer"></iframe></dialog>
+  <script>/*SCRIPT*/</script>
+</body>
+</html>

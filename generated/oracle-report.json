@@ -1,0 +1,275 @@
+{
+  "status": "passed",
+  "oracle": {
+    "repository": "https://github.com/microsoft/vscode",
+    "version": "1.96.4",
+    "commit": "cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba",
+    "sourceFiles": 56,
+    "sourceIntegrity": "All vendored source hashes verified",
+    "runtime": "Unmodified ContextKeyExpr + KeybindingResolver + KeybindingParser + USLayoutResolvedKeybinding",
+    "platform": "linux",
+    "keyboardLayout": "US reference layout"
+  },
+  "checks": {
+    "contexts": 12,
+    "scenarios": 12,
+    "originalResolution": 12,
+    "exportedResolution": 12,
+    "reversedExportResolution": 12,
+    "declaredPriorityResolution": 12,
+    "disjointGuards": 12,
+    "deltaCsvRows": 1,
+    "changedScenarios": 1,
+    "fallThroughScenarios": 6,
+    "scenariosWithAbsentKeys": 4
+  },
+  "artifactHashes": {
+    "keybindings.json": "94be136e23fe3fd317382a5e56860188ffc19b8cf75b366387707b171f08d3b3",
+    "original-keybindings.json": "33ad33b664ce65c760f0649f4e4c79bcb5429d5addef38dac291b27221e3a5aa",
+    "source-map.json": "aa88897d15987647b717185909dde87613a5fe5aaad121c3e3edb94c1c2db37b",
+    "scenarios.json": "7a2f7cf0f6180c90ed8827877f12f3bd8fa0084e8c957badf792b64fb0cafea6",
+    "project.json": "c5ee012221056f6593202718d707ccb4409d712d4eb13e72ee0e6f8bbba3c531",
+    "behavior-delta.csv": "4556fd9565b370d631fc11227e99c0d9746de4b2bf18bb5ac1b1aa18302737fc"
+  },
+  "limitations": [
+    "Finite declared model only",
+    "Only supplied ordered keybindings; no undisclosed default or extension rules",
+    "Model enumeration is not proof of editor-state reachability",
+    "Native editor keystrokes are a separate test"
+  ],
+  "results": [
+    {
+      "context": {
+        "whenfold.focus": false,
+        "whenfold.selection": false,
+        "whenfold.lang": "python"
+      },
+      "key": "ctrl+alt+k",
+      "before": null,
+      "after": null,
+      "matchedExportIds": [],
+      "changed": false
+    },
+    {
+      "context": {
+        "whenfold.focus": false,
+        "whenfold.selection": false,
+        "whenfold.lang": "javascript"
+      },
+      "key": "ctrl+alt+k",
+      "before": null,
+      "after": null,
+      "matchedExportIds": [],
+      "changed": false
+    },
+    {
+      "context": {
+        "whenfold.focus": false,
+        "whenfold.selection": false
+      },
+      "key": "ctrl+alt+k",
+      "before": null,
+      "after": null,
+      "matchedExportIds": [],
+      "changed": false
+    },
+    {
+      "context": {
+        "whenfold.focus": false,
+        "whenfold.selection": true,
+        "whenfold.lang": "python"
+      },
+      "key": "ctrl+alt+k",
+      "before": null,
+      "after": null,
+      "matchedExportIds": [],
+      "changed": false
+    },
+    {
+      "context": {
+        "whenfold.focus": false,
+        "whenfold.selection": true,
+        "whenfold.lang": "javascript"
+      },
+      "key": "ctrl+alt+k",
+      "before": null,
+      "after": null,
+      "matchedExportIds": [],
+      "changed": false
+    },
+    {
+      "context": {
+        "whenfold.focus": false,
+        "whenfold.selection": true
+      },
+      "key": "ctrl+alt+k",
+      "before": null,
+      "after": null,
+      "matchedExportIds": [],
+      "changed": false
+    },
+    {
+      "context": {
+        "whenfold.focus": true,
+        "whenfold.selection": false,
+        "whenfold.lang": "python"
+      },
+      "key": "ctrl+alt+k",
+      "before": {
+        "command": "demo.python",
+        "args": {
+          "kind": "python",
+          "nested": {
+            "preserve": [
+              "a",
+              false,
+              null
+            ]
+          }
+        }
+      },
+      "after": {
+        "command": "demo.python",
+        "args": {
+          "kind": "python",
+          "nested": {
+            "preserve": [
+              "a",
+              false,
+              null
+            ]
+          }
+        }
+      },
+      "matchedExportIds": [
+        "s1:r2"
+      ],
+      "changed": false
+    },
+    {
+      "context": {
+        "whenfold.focus": true,
+        "whenfold.selection": false,
+        "whenfold.lang": "javascript"
+      },
+      "key": "ctrl+alt+k",
+      "before": {
+        "command": "demo.generic",
+        "args": {
+          "kind": "generic"
+        }
+      },
+      "after": {
+        "command": "demo.generic",
+        "args": {
+          "kind": "generic"
+        }
+      },
+      "matchedExportIds": [
+        "s1:r1"
+      ],
+      "changed": false
+    },
+    {
+      "context": {
+        "whenfold.focus": true,
+        "whenfold.selection": false
+      },
+      "key": "ctrl+alt+k",
+      "before": {
+        "command": "demo.generic",
+        "args": {
+          "kind": "generic"
+        }
+      },
+      "after": {
+        "command": "demo.generic",
+        "args": {
+          "kind": "generic"
+        }
+      },
+      "matchedExportIds": [
+        "s1:r1"
+      ],
+      "changed": false
+    },
+    {
+      "context": {
+        "whenfold.focus": true,
+        "whenfold.selection": true,
+        "whenfold.lang": "python"
+      },
+      "key": "ctrl+alt+k",
+      "before": {
+        "command": "demo.selection",
+        "args": {
+          "kind": "selection"
+        }
+      },
+      "after": {
+        "command": "demo.python",
+        "args": {
+          "kind": "python",
+          "nested": {
+            "preserve": [
+              "a",
+              false,
+              null
+            ]
+          }
+        }
+      },
+      "matchedExportIds": [
+        "s1:r2"
+      ],
+      "changed": true
+    },
+    {
+      "context": {
+        "whenfold.focus": true,
+        "whenfold.selection": true,
+        "whenfold.lang": "javascript"
+      },
+      "key": "ctrl+alt+k",
+      "before": {
+        "command": "demo.selection",
+        "args": {
+          "kind": "selection"
+        }
+      },
+      "after": {
+        "command": "demo.selection",
+        "args": {
+          "kind": "selection"
+        }
+      },
+      "matchedExportIds": [
+        "s2:r1"
+      ],
+      "changed": false
+    },
+    {
+      "context": {
+        "whenfold.focus": true,
+        "whenfold.selection": true
+      },
+      "key": "ctrl+alt+k",
+      "before": {
+        "command": "demo.selection",
+        "args": {
+          "kind": "selection"
+        }
+      },
+      "after": {
+        "command": "demo.selection",
+        "args": {
+          "kind": "selection"
+        }
+      },
+      "matchedExportIds": [
+        "s2:r1"
+      ],
+      "changed": false
+    }
+  ]
+}

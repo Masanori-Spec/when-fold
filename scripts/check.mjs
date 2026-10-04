@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+import {execFileSync} from 'node:child_process';
+const html=fs.readFileSync('dist/index.html','utf8');
+assert.ok(html.includes('WhenFold'));assert.ok(!/<script[^>]+src=/.test(html));assert.ok(!/https?:\/\/[^"']+\.(?:js|css)/.test(html));
+assert.ok(!/\beval\s*\(|new Function\s*\(/.test(html));
+const script=html.match(/<script[^>]*>([\s\S]*)<\/script>/)?.[1];assert.ok(script);new vm.Script(script);
+execFileSync(process.execPath,['scripts/export-example.mjs'],{stdio:'inherit'});
+execFileSync('python3',['-c',`import zipfile,json,csv,io\nz=zipfile.ZipFile('generated/handoff.zip')\nassert z.testzip() is None\nassert set(z.namelist())=={'keybindings.json','original-keybindings.json','source-map.json','behavior-delta.csv','scenarios.json','report.html'}\na=json.loads(z.read('keybindings.json')); assert len(a)==3\ns=json.loads(z.read('scenarios.json')); assert len(s['contexts'])==12 and len(s['scenarios'])==12\nr=list(csv.DictReader(io.StringIO(z.read('behavior-delta.csv').decode('utf-8-sig')))); assert len(r)==1\nassert r[0]['before_command']=='demo.selection' and r[0]['after_command']=='demo.python'\nprint('Independent Python ZIP/JSON/CSV structure: passed')`],{stdio:'inherit'});
+console.log('Standalone bundle syntax, zero runtime network dependencies, fixture and ZIP structure passed');

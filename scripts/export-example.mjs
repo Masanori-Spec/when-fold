@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import {analyzeProject,parseProject} from '../src/core.mjs';
+import {makeArtifacts,createZip} from '../src/exports.mjs';
+const project=parseProject(fs.readFileSync('fixtures/twelve-contexts.json','utf8'));
+const result=analyzeProject(project,{'ctrl+alt+k':['s1:r2','s2:r1','s1:r1']});
+fs.mkdirSync('generated',{recursive:true});
+for(const [name,content] of Object.entries(makeArtifacts(result)))fs.writeFileSync('generated/'+name,content);
+fs.writeFileSync('generated/project.json',JSON.stringify(project,null,2)+'\n');
+fs.writeFileSync('generated/handoff.zip',createZip(makeArtifacts(result)));
+fs.writeFileSync('generated/summary.json',JSON.stringify(result.stats,null,2)+'\n');
+if(result.stats.changedCount!==1||result.stats.contextCount!==12)throw new Error('Fixture invariant failed');
+console.log(JSON.stringify(result.stats));

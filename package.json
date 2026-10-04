@@ -1,0 +1,26 @@
+{
+  "name": "when-fold",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Explicit shortcut precedence, disjoint guarded VS Code keybindings and finite behavior witnesses",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm run build && npm test && node scripts/check.mjs",
+    "fixture": "node scripts/export-example.mjs",
+    "test:oracle": "node tools/oracle.mjs",
+    "test:browser": "node tests/browser-test.mjs",
+    "test:native": "node tools/native.mjs",
+    "serve": "node scripts/serve.mjs",
+    "package": "python3 scripts/package.py",
+    "test:review": "node tests/review-expanded.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.0",
+    "esbuild": "0.25.11"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "platform": "linux",
+  "sources": [
+    {
+      "name": "Everyday + Python",
+      "rules": [
+        {
+          "key": "ctrl+alt+k",
+          "command": "demo.generic",
+          "when": "whenfold.focus",
+          "args": {
+            "kind": "generic"
+          }
+        },
+        {
+          "key": "ctrl+alt+k",
+          "command": "demo.python",
+          "when": "whenfold.focus && whenfold.lang == python",
+          "args": {
+            "kind": "python",
+            "nested": {
+              "preserve": [
+                "a",
+                false,
+                null
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Selection pack",
+      "rules": [
+        {
+          "key": "ctrl+alt+k",
+          "command": "demo.selection",
+          "when": "whenfold.focus && whenfold.selection",
+          "args": {
+            "kind": "selection"
+          }
+        }
+      ]
+    }
+  ],
+  "model": {
+    "whenfold.focus": {
+      "type": "boolean",
+      "values": [
+        false,
+        true
+      ]
+    },
+    "whenfold.selection": {
+      "type": "boolean",
+      "values": [
+        false,
+        true
+      ]
+    },
+    "whenfold.lang": {
+      "type": "string",
+      "values": [
+        "python",
+        "javascript",
+        null
+      ]
+    }
+  }
+}

@@ -1,0 +1,311 @@
+{
+  "version": 1,
+  "platform": "linux",
+  "contexts": [
+    {
+      "whenfold.focus": false,
+      "whenfold.selection": false,
+      "whenfold.lang": "python"
+    },
+    {
+      "whenfold.focus": false,
+      "whenfold.selection": false,
+      "whenfold.lang": "javascript"
+    },
+    {
+      "whenfold.focus": false,
+      "whenfold.selection": false
+    },
+    {
+      "whenfold.focus": false,
+      "whenfold.selection": true,
+      "whenfold.lang": "python"
+    },
+    {
+      "whenfold.focus": false,
+      "whenfold.selection": true,
+      "whenfold.lang": "javascript"
+    },
+    {
+      "whenfold.focus": false,
+      "whenfold.selection": true
+    },
+    {
+      "whenfold.focus": true,
+      "whenfold.selection": false,
+      "whenfold.lang": "python"
+    },
+    {
+      "whenfold.focus": true,
+      "whenfold.selection": false,
+      "whenfold.lang": "javascript"
+    },
+    {
+      "whenfold.focus": true,
+      "whenfold.selection": false
+    },
+    {
+      "whenfold.focus": true,
+      "whenfold.selection": true,
+      "whenfold.lang": "python"
+    },
+    {
+      "whenfold.focus": true,
+      "whenfold.selection": true,
+      "whenfold.lang": "javascript"
+    },
+    {
+      "whenfold.focus": true,
+      "whenfold.selection": true
+    }
+  ],
+  "scenarios": [
+    {
+      "context": {
+        "whenfold.focus": false,
+        "whenfold.selection": false,
+        "whenfold.lang": "python"
+      },
+      "key": "ctrl+alt+k",
+      "before": null,
+      "after": null,
+      "matchedExportIds": []
+    },
+    {
+      "context": {
+        "whenfold.focus": false,
+        "whenfold.selection": false,
+        "whenfold.lang": "javascript"
+      },
+      "key": "ctrl+alt+k",
+      "before": null,
+      "after": null,
+      "matchedExportIds": []
+    },
+    {
+      "context": {
+        "whenfold.focus": false,
+        "whenfold.selection": false
+      },
+      "key": "ctrl+alt+k",
+      "before": null,
+      "after": null,
+      "matchedExportIds": []
+    },
+    {
+      "context": {
+        "whenfold.focus": false,
+        "whenfold.selection": true,
+        "whenfold.lang": "python"
+      },
+      "key": "ctrl+alt+k",
+      "before": null,
+      "after": null,
+      "matchedExportIds": []
+    },
+    {
+      "context": {
+        "whenfold.focus": false,
+        "whenfold.selection": true,
+        "whenfold.lang": "javascript"
+      },
+      "key": "ctrl+alt+k",
+      "before": null,
+      "after": null,
+      "matchedExportIds": []
+    },
+    {
+      "context": {
+        "whenfold.focus": false,
+        "whenfold.selection": true
+      },
+      "key": "ctrl+alt+k",
+      "before": null,
+      "after": null,
+      "matchedExportIds": []
+    },
+    {
+      "context": {
+        "whenfold.focus": true,
+        "whenfold.selection": false,
+        "whenfold.lang": "python"
+      },
+      "key": "ctrl+alt+k",
+      "before": {
+        "id": "s1:r2",
+        "command": "demo.python",
+        "args": {
+          "kind": "python",
+          "nested": {
+            "preserve": [
+              "a",
+              false,
+              null
+            ]
+          }
+        }
+      },
+      "after": {
+        "id": "s1:r2",
+        "command": "demo.python",
+        "args": {
+          "kind": "python",
+          "nested": {
+            "preserve": [
+              "a",
+              false,
+              null
+            ]
+          }
+        }
+      },
+      "matchedExportIds": [
+        "s1:r2"
+      ]
+    },
+    {
+      "context": {
+        "whenfold.focus": true,
+        "whenfold.selection": false,
+        "whenfold.lang": "javascript"
+      },
+      "key": "ctrl+alt+k",
+      "before": {
+        "id": "s1:r1",
+        "command": "demo.generic",
+        "args": {
+          "kind": "generic"
+        }
+      },
+      "after": {
+        "id": "s1:r1",
+        "command": "demo.generic",
+        "args": {
+          "kind": "generic"
+        }
+      },
+      "matchedExportIds": [
+        "s1:r1"
+      ]
+    },
+    {
+      "context": {
+        "whenfold.focus": true,
+        "whenfold.selection": false
+      },
+      "key": "ctrl+alt+k",
+      "before": {
+        "id": "s1:r1",
+        "command": "demo.generic",
+        "args": {
+          "kind": "generic"
+        }
+      },
+      "after": {
+        "id": "s1:r1",
+        "command": "demo.generic",
+        "args": {
+          "kind": "generic"
+        }
+      },
+      "matchedExportIds": [
+        "s1:r1"
+      ]
+    },
+    {
+      "context": {
+        "whenfold.focus": true,
+        "whenfold.selection": true,
+        "whenfold.lang": "python"
+      },
+      "key": "ctrl+alt+k",
+      "before": {
+        "id": "s2:r1",
+        "command": "demo.selection",
+        "args": {
+          "kind": "selection"
+        }
+      },
+      "after": {
+        "id": "s1:r2",
+        "command": "demo.python",
+        "args": {
+          "kind": "python",
+          "nested": {
+            "preserve": [
+              "a",
+              false,
+              null
+            ]
+          }
+        }
+      },
+      "matchedExportIds": [
+        "s1:r2"
+      ]
+    },
+    {
+      "context": {
+        "whenfold.focus": true,
+        "whenfold.selection": true,
+        "whenfold.lang": "javascript"
+      },
+      "key": "ctrl+alt+k",
+      "before": {
+        "id": "s2:r1",
+        "command": "demo.selection",
+        "args": {
+          "kind": "selection"
+        }
+      },
+      "after": {
+        "id": "s2:r1",
+        "command": "demo.selection",
+        "args": {
+          "kind": "selection"
+        }
+      },
+      "matchedExportIds": [
+        "s2:r1"
+      ]
+    },
+    {
+      "context": {
+        "whenfold.focus": true,
+        "whenfold.selection": true
+      },
+      "key": "ctrl+alt+k",
+      "before": {
+        "id": "s2:r1",
+        "command": "demo.selection",
+        "args": {
+          "kind": "selection"
+        }
+      },
+      "after": {
+        "id": "s2:r1",
+        "command": "demo.selection",
+        "args": {
+          "kind": "selection"
+        }
+      },
+      "matchedExportIds": [
+        "s2:r1"
+      ]
+    }
+  ],
+  "priority": {
+    "ctrl+alt+k": [
+      "s1:r2",
+      "s2:r1",
+      "s1:r1"
+    ]
+  },
+  "coverage": {
+    "rules": "Only supplied ordered rules; unknown built-in/extension rules are not covered",
+    "contexts": "Logical combinations in the declared finite model, not proof of editor reachability",
+    "platform": "linux",
+    "syntax": "Single stroke; ! && || () == !=; typed boolean/string keys; null means absent",
+    "format": "Source comments and formatting are not preserved"
+  }
+}

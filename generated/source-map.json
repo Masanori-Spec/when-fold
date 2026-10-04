@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "platform": "linux",
+  "entries": [
+    {
+      "outputIndex": 0,
+      "id": "s1:r1",
+      "source": "Everyday + Python",
+      "sourceIndex": 0,
+      "ruleIndex": 0,
+      "originalWhen": "whenfold.focus",
+      "guard": "(whenfold.focus && !(((whenfold.focus && whenfold.lang == 'python') || (whenfold.focus && whenfold.selection))))",
+      "priorityRank": 2
+    },
+    {
+      "outputIndex": 1,
+      "id": "s2:r1",
+      "source": "Selection pack",
+      "sourceIndex": 1,
+      "ruleIndex": 0,
+      "originalWhen": "whenfold.focus && whenfold.selection",
+      "guard": "((whenfold.focus && whenfold.selection) && !((whenfold.focus && whenfold.lang == 'python')))",
+      "priorityRank": 1
+    },
+    {
+      "outputIndex": 2,
+      "id": "s1:r2",
+      "source": "Everyday + Python",
+      "sourceIndex": 0,
+      "ruleIndex": 1,
+      "originalWhen": "whenfold.focus && whenfold.lang == python",
+      "guard": "(whenfold.focus && whenfold.lang == 'python')",
+      "priorityRank": 0
+    }
+  ],
+  "coverage": {
+    "rules": "Only supplied ordered rules; unknown built-in/extension rules are not covered",
+    "contexts": "Logical combinations in the declared finite model, not proof of editor reachability",
+    "platform": "linux",
+    "syntax": "Single stroke; ! && || () == !=; typed boolean/string keys; null means absent",
+    "format": "Source comments and formatting are not preserved"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  node: 'v24.19.0',
+  ruleCount: 100,
+  contextCount: 4096,
+  groupCount: 1,
+  scenarioCount: 4096,
+  elapsedMs: 377.01,
+  note: 'Local synthetic bounded workload; not a product performance guarantee'
+}

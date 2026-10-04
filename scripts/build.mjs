@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+const read=p=>fs.readFileSync(p,'utf8');
+const strip=s=>s.replace(/^export /gm,'');
+const js=strip(read('src/core.mjs'))+'\n'+strip(read('src/exports.mjs'))+'\nconst SAMPLE_PROJECT='+read('fixtures/twelve-contexts.json')+';\n'+read('web/app.js');
+new vm.Script(js);
+const html=read('web/index.html').replace('/*STYLE*/',()=>read('web/style.css')).replace('/*SCRIPT*/',()=>js.replace(/<\/script/gi,'<\\/script'));
+if(html.includes('/*STYLE*/')||html.includes('/*SCRIPT*/'))throw new Error('Unreplaced build placeholder');
+fs.mkdirSync('dist',{recursive:true});fs.writeFileSync('dist/index.html',html);
+console.log(`Built standalone dist/index.html (${Buffer.byteLength(html)} bytes)`);
