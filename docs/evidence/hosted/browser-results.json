@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "sandbox": true,
+  "playwright": "1.56.0",
+  "baseURL": "http://127.0.0.1:4173/when-fold/",
+  "testsRun": 15,
+  "passed": 15,
+  "failed": 0,
+  "results": [
+    {
+      "name": "initial-state-and-keyboard-navigation",
+      "status": "passed"
+    },
+    {
+      "name": "actual-compiler-reorder-keyboard-and-zip",
+      "status": "passed"
+    },
+    {
+      "name": "actual-downloaded-report-offline-a4-print",
+      "status": "passed"
+    },
+    {
+      "name": "generic-priority-move-and-reverse",
+      "status": "passed"
+    },
+    {
+      "name": "invalid-edit-clears-every-result-and-reset",
+      "status": "passed"
+    },
+    {
+      "name": "file-import-invalid-import-and-reimport",
+      "status": "passed"
+    },
+    {
+      "name": "jsonc-snippet-append-and-draft-invalidation",
+      "status": "passed"
+    },
+    {
+      "name": "slow-file-cannot-overwrite-reset",
+      "status": "passed"
+    },
+    {
+      "name": "slow-file-cannot-overwrite-newer-import",
+      "status": "passed"
+    },
+    {
+      "name": "slow-file-cannot-overwrite-edit-or-analysis",
+      "status": "passed"
+    },
+    {
+      "name": "safe-text-rendering-report-and-single-file-export",
+      "status": "passed"
+    },
+    {
+      "name": "args-only-delta-and-absent-context-visible",
+      "status": "passed"
+    },
+    {
+      "name": "language-persistence-and-desktop-screenshots",
+      "status": "passed"
+    },
+    {
+      "name": "japanese-and-english-mobile-layout",
+      "status": "passed"
+    },
+    {
+      "name": "offline-file-build-and-no-external-requests",
+      "status": "passed"
+    }
+  ],
+  "pageErrors": []
+}

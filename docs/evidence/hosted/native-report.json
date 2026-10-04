@@ -1,0 +1,481 @@
+{
+  "status": "passed",
+  "distribution": {
+    "version": "1.96.4",
+    "commit": "cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba",
+    "platform": "linux-x64",
+    "metadataUrl": "https://update.code.visualstudio.com/api/versions/1.96.4/linux-x64/stable",
+    "url": "https://vscode.download.prss.microsoft.com/dbazure/download/stable/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/code-stable-x64-1736989961.tar.gz",
+    "sha256": "36afc71e07ad0d94ba4f2e4ae173209d39727f33c0adc30f6b55b5599220373f",
+    "license": "Microsoft Visual Studio Code product license, separate from MIT upstream source",
+    "licenseUrl": "https://code.visualstudio.com/license"
+  },
+  "runs": [
+    {
+      "status": "passed",
+      "version": "1.96.4",
+      "commit": "cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba",
+      "mode": "original",
+      "sandbox": "enabled; no --no-sandbox launch flag",
+      "profile": "fresh disposable profile",
+      "keypress": "X11 xdotool ctrl+alt+k",
+      "arbitraryImportedCommandsExecuted": false,
+      "allowedFixtureCommands": [
+        "demo.generic",
+        "demo.python",
+        "demo.selection"
+      ],
+      "results": [
+        {
+          "context": {
+            "whenfold.focus": false,
+            "whenfold.selection": false,
+            "whenfold.lang": "python"
+          },
+          "key": "ctrl+alt+k",
+          "expected": null,
+          "observed": []
+        },
+        {
+          "context": {
+            "whenfold.focus": false,
+            "whenfold.selection": false,
+            "whenfold.lang": "javascript"
+          },
+          "key": "ctrl+alt+k",
+          "expected": null,
+          "observed": []
+        },
+        {
+          "context": {
+            "whenfold.focus": false,
+            "whenfold.selection": false
+          },
+          "key": "ctrl+alt+k",
+          "expected": null,
+          "observed": []
+        },
+        {
+          "context": {
+            "whenfold.focus": false,
+            "whenfold.selection": true,
+            "whenfold.lang": "python"
+          },
+          "key": "ctrl+alt+k",
+          "expected": null,
+          "observed": []
+        },
+        {
+          "context": {
+            "whenfold.focus": false,
+            "whenfold.selection": true,
+            "whenfold.lang": "javascript"
+          },
+          "key": "ctrl+alt+k",
+          "expected": null,
+          "observed": []
+        },
+        {
+          "context": {
+            "whenfold.focus": false,
+            "whenfold.selection": true
+          },
+          "key": "ctrl+alt+k",
+          "expected": null,
+          "observed": []
+        },
+        {
+          "context": {
+            "whenfold.focus": true,
+            "whenfold.selection": false,
+            "whenfold.lang": "python"
+          },
+          "key": "ctrl+alt+k",
+          "expected": {
+            "command": "demo.python",
+            "args": {
+              "kind": "python",
+              "nested": {
+                "preserve": [
+                  "a",
+                  false,
+                  null
+                ]
+              }
+            }
+          },
+          "observed": [
+            {
+              "command": "demo.python",
+              "args": {
+                "kind": "python",
+                "nested": {
+                  "preserve": [
+                    "a",
+                    false,
+                    null
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "context": {
+            "whenfold.focus": true,
+            "whenfold.selection": false,
+            "whenfold.lang": "javascript"
+          },
+          "key": "ctrl+alt+k",
+          "expected": {
+            "command": "demo.generic",
+            "args": {
+              "kind": "generic"
+            }
+          },
+          "observed": [
+            {
+              "command": "demo.generic",
+              "args": {
+                "kind": "generic"
+              }
+            }
+          ]
+        },
+        {
+          "context": {
+            "whenfold.focus": true,
+            "whenfold.selection": false
+          },
+          "key": "ctrl+alt+k",
+          "expected": {
+            "command": "demo.generic",
+            "args": {
+              "kind": "generic"
+            }
+          },
+          "observed": [
+            {
+              "command": "demo.generic",
+              "args": {
+                "kind": "generic"
+              }
+            }
+          ]
+        },
+        {
+          "context": {
+            "whenfold.focus": true,
+            "whenfold.selection": true,
+            "whenfold.lang": "python"
+          },
+          "key": "ctrl+alt+k",
+          "expected": {
+            "command": "demo.selection",
+            "args": {
+              "kind": "selection"
+            }
+          },
+          "observed": [
+            {
+              "command": "demo.selection",
+              "args": {
+                "kind": "selection"
+              }
+            }
+          ]
+        },
+        {
+          "context": {
+            "whenfold.focus": true,
+            "whenfold.selection": true,
+            "whenfold.lang": "javascript"
+          },
+          "key": "ctrl+alt+k",
+          "expected": {
+            "command": "demo.selection",
+            "args": {
+              "kind": "selection"
+            }
+          },
+          "observed": [
+            {
+              "command": "demo.selection",
+              "args": {
+                "kind": "selection"
+              }
+            }
+          ]
+        },
+        {
+          "context": {
+            "whenfold.focus": true,
+            "whenfold.selection": true
+          },
+          "key": "ctrl+alt+k",
+          "expected": {
+            "command": "demo.selection",
+            "args": {
+              "kind": "selection"
+            }
+          },
+          "observed": [
+            {
+              "command": "demo.selection",
+              "args": {
+                "kind": "selection"
+              }
+            }
+          ]
+        }
+      ],
+      "screenshot": "native-original.png",
+      "keybindingsSha256": "33ad33b664ce65c760f0649f4e4c79bcb5429d5addef38dac291b27221e3a5aa"
+    },
+    {
+      "status": "passed",
+      "version": "1.96.4",
+      "commit": "cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba",
+      "mode": "exported",
+      "sandbox": "enabled; no --no-sandbox launch flag",
+      "profile": "fresh disposable profile",
+      "keypress": "X11 xdotool ctrl+alt+k",
+      "arbitraryImportedCommandsExecuted": false,
+      "allowedFixtureCommands": [
+        "demo.generic",
+        "demo.python",
+        "demo.selection"
+      ],
+      "results": [
+        {
+          "context": {
+            "whenfold.focus": false,
+            "whenfold.selection": false,
+            "whenfold.lang": "python"
+          },
+          "key": "ctrl+alt+k",
+          "expected": null,
+          "observed": []
+        },
+        {
+          "context": {
+            "whenfold.focus": false,
+            "whenfold.selection": false,
+            "whenfold.lang": "javascript"
+          },
+          "key": "ctrl+alt+k",
+          "expected": null,
+          "observed": []
+        },
+        {
+          "context": {
+            "whenfold.focus": false,
+            "whenfold.selection": false
+          },
+          "key": "ctrl+alt+k",
+          "expected": null,
+          "observed": []
+        },
+        {
+          "context": {
+            "whenfold.focus": false,
+            "whenfold.selection": true,
+            "whenfold.lang": "python"
+          },
+          "key": "ctrl+alt+k",
+          "expected": null,
+          "observed": []
+        },
+        {
+          "context": {
+            "whenfold.focus": false,
+            "whenfold.selection": true,
+            "whenfold.lang": "javascript"
+          },
+          "key": "ctrl+alt+k",
+          "expected": null,
+          "observed": []
+        },
+        {
+          "context": {
+            "whenfold.focus": false,
+            "whenfold.selection": true
+          },
+          "key": "ctrl+alt+k",
+          "expected": null,
+          "observed": []
+        },
+        {
+          "context": {
+            "whenfold.focus": true,
+            "whenfold.selection": false,
+            "whenfold.lang": "python"
+          },
+          "key": "ctrl+alt+k",
+          "expected": {
+            "command": "demo.python",
+            "args": {
+              "kind": "python",
+              "nested": {
+                "preserve": [
+                  "a",
+                  false,
+                  null
+                ]
+              }
+            }
+          },
+          "observed": [
+            {
+              "command": "demo.python",
+              "args": {
+                "kind": "python",
+                "nested": {
+                  "preserve": [
+                    "a",
+                    false,
+                    null
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "context": {
+            "whenfold.focus": true,
+            "whenfold.selection": false,
+            "whenfold.lang": "javascript"
+          },
+          "key": "ctrl+alt+k",
+          "expected": {
+            "command": "demo.generic",
+            "args": {
+              "kind": "generic"
+            }
+          },
+          "observed": [
+            {
+              "command": "demo.generic",
+              "args": {
+                "kind": "generic"
+              }
+            }
+          ]
+        },
+        {
+          "context": {
+            "whenfold.focus": true,
+            "whenfold.selection": false
+          },
+          "key": "ctrl+alt+k",
+          "expected": {
+            "command": "demo.generic",
+            "args": {
+              "kind": "generic"
+            }
+          },
+          "observed": [
+            {
+              "command": "demo.generic",
+              "args": {
+                "kind": "generic"
+              }
+            }
+          ]
+        },
+        {
+          "context": {
+            "whenfold.focus": true,
+            "whenfold.selection": true,
+            "whenfold.lang": "python"
+          },
+          "key": "ctrl+alt+k",
+          "expected": {
+            "command": "demo.python",
+            "args": {
+              "kind": "python",
+              "nested": {
+                "preserve": [
+                  "a",
+                  false,
+                  null
+                ]
+              }
+            }
+          },
+          "observed": [
+            {
+              "command": "demo.python",
+              "args": {
+                "kind": "python",
+                "nested": {
+                  "preserve": [
+                    "a",
+                    false,
+                    null
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "context": {
+            "whenfold.focus": true,
+            "whenfold.selection": true,
+            "whenfold.lang": "javascript"
+          },
+          "key": "ctrl+alt+k",
+          "expected": {
+            "command": "demo.selection",
+            "args": {
+              "kind": "selection"
+            }
+          },
+          "observed": [
+            {
+              "command": "demo.selection",
+              "args": {
+                "kind": "selection"
+              }
+            }
+          ]
+        },
+        {
+          "context": {
+            "whenfold.focus": true,
+            "whenfold.selection": true
+          },
+          "key": "ctrl+alt+k",
+          "expected": {
+            "command": "demo.selection",
+            "args": {
+              "kind": "selection"
+            }
+          },
+          "observed": [
+            {
+              "command": "demo.selection",
+              "args": {
+                "kind": "selection"
+              }
+            }
+          ]
+        }
+      ],
+      "screenshot": "native-exported.png",
+      "keybindingsSha256": "94be136e23fe3fd317382a5e56860188ffc19b8cf75b366387707b171f08d3b3"
+    }
+  ],
+  "checks": {
+    "originalKeypresses": 12,
+    "exportedKeypresses": 12,
+    "changedScenarios": 1,
+    "userProfilesModified": 0
+  },
+  "limitations": [
+    "Synthetic custom context keys on a US/X11 keyboard layout",
+    "Does not prove real editor reachability or other installed extension compatibility"
+  ]
+}

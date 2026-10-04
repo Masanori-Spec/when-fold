@@ -1,6 +1,6 @@
 # Verification status
 
-Source freeze preparation: 2026-10-04. The stages below are intentionally separate.
+Source and hosted verification: 2026-10-04. Local checks and actual hosted execution are recorded separately.
 
 ## Passed locally
 
@@ -13,21 +13,27 @@ Source freeze preparation: 2026-10-04. The stages below are intentionally separa
 - Corrupted args, missing context, forged priority and overlapping-guard mutation detection; upstream leading-caret command semantics; negative-zero argument preservation rejection; pinned scanner-whitespace boundary regressions
 - Independent Python ZIP, JSON and CSV structure checks against the generated handoff ZIP
 - Disposable native fixture safety/identity checks; harness JavaScript syntax
-- 14 browser acceptance checks collected without launching Chromium
+- 15 browser acceptance checks collected without launching Chromium
 - Synthetic 100-rule / 4,096-context / one-shortcut benchmark; local timing in evidence is observational, not a product guarantee
 
 Logs and JSON reports are in `docs/evidence/`. The source archive and SHA-256 manifest are produced by `npm run package` outside the repository directory.
 
-## Prepared, not run locally
+## Passed on the published source
 
-- Genuine sandboxed Chromium browser execution
-- Actual browser download's upstream oracle check
-- JA/EN desktop, 390px mobile and 320px overflow checks plus screenshot review
-- Official native VS Code execution and 24 real fixture keypresses
+[GitHub Actions run 37209599757](https://github.com/Masanori-Spec/when-fold/actions/runs/37209599757) completed successfully for source commit `4eecbc7652084eb7aac3e0bc93aab759eded3422`. All three jobs passed:
 
-The assigned build environment has a known browser sandbox-launch limitation. The tests are prepared for a non-root `ubuntu-22.04` hosted runner without disabling the sandbox. No local launch is asserted, and test collection or fixture validation is not a pass for those stages.
+- Node 22 and Node 24: 146 tests each, mandatory upstream oracle, expanded differential review, synthetic benchmark and fixture safety validation
+- Sandbox-enabled Chromium: 15/15 real browser checks, zero failures and zero uncaught page errors, including keyboard priority changes, reset/reimport, stale async imports, args-only differences, safe rendering, offline standalone operation, JA/EN desktop and 390px mobile screenshots, and 320px overflow checks
+- Actual browser-downloaded ZIP: its six members were independently compared with the extracted files, then verified by the pinned VS Code resolver for every modeled context, exact args, source mapping, disjointness and reversed output order
+- Official hash-pinned VS Code 1.96.4: 12 original and 12 exported keypresses in separate disposable profiles. Every observed command/args array matches the scenario result. Exactly one context changes from selection to Python; six contexts fall through and four omit the language key in each mode
+- Actual browser-downloaded report: rendered offline, content/row/bounds checks passed, and printed to three A4 landscape pages. All three pages were visually inspected with no clipping or overlap; the continuation page repeats table headers
+- JA/EN desktop/mobile and both native-editor screenshots were inspected. Only the harmless synthetic fixture appears
 
-`.github/workflows/verify.yml` prepares two Node versions and a sandbox-browser/native-editor job. It uses real downloaded browser artifacts for the upstream and native consumers. Native reports and screenshots are written into that artifact directory. **No hosted CI run, publication, deployment, or visual approval has been performed by this build task.** Their results must be checked against the exact published commit before a release claim.
+Durable summaries, actual screenshots, PDF and page renders are in [`evidence/hosted/`](evidence/hosted/). [`run.json`](evidence/hosted/run.json) identifies the exact source commit and workflow artifact hash; [`visual-review.json`](evidence/hosted/visual-review.json) records the post-run inspection. The automatically generated print report retains its original visual-review-pending note; the separate visual review records the completed inspection.
+
+The dot cloud build environment did not launch local Chromium or native VS Code. Those executions occurred on the non-root `ubuntu-22.04` hosted runner with sandboxes enabled. Local fixture-only `generated/native-report.json` remains explicitly marked not-run; the executed consumer report is `evidence/hosted/native-report.json` and consumes the actual browser download. No local editor-profile access is implied.
+
+Repository publication and tests establish this bounded synthetic workflow. They do not validate arbitrary installed extensions, real user context reachability, all keyboard layouts, or commercial demand.
 
 ## Acceptance boundaries
 

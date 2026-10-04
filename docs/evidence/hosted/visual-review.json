@@ -1,0 +1,21 @@
+{
+  "reviewedDate": "2026-10-04",
+  "sourceRun": "https://github.com/Masanori-Spec/when-fold/actions/runs/37209599757",
+  "status": "passed",
+  "inspected": [
+    "desktop-ja.png",
+    "desktop-en.png",
+    "mobile-ja.png",
+    "mobile-en.png",
+    "native-original.png",
+    "native-exported.png",
+    "report-page-1.png",
+    "report-page-2.png",
+    "report-page-3.png"
+  ],
+  "findings": "Supported synthetic fixture is legible in JA/EN desktop and 390px mobile screenshots. All three A4 landscape pages were inspected; content is retained without clipping or overlap, and source-map continuation repeats table headers. Native screenshots show the isolated fixture editor.",
+  "limitations": [
+    "Screenshots are evidence of this synthetic fixture, not a guarantee for arbitrary imported data.",
+    "The automatically generated report-print.json deliberately records that visual inspection occurs after CI. This file records that later inspection."
+  ]
+}

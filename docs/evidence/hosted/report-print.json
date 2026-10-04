@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "source": "Actual report.html from browser-downloaded ZIP",
+  "offline": true,
+  "sourceSha256": "fed76886ca204c105d86dd80d3ef0404b8d4115467b01ae119946a559205cc0d",
+  "pdfSha256": "173b2130a764aae72683b0273f1622027266cb055c68834a7c549ab9ce4148ae",
+  "pages": 3,
+  "pageSizes": [
+    {
+      "width": 841.92,
+      "height": 594.96
+    },
+    {
+      "width": 841.92,
+      "height": 594.96
+    },
+    {
+      "width": 841.92,
+      "height": 594.96
+    }
+  ],
+  "bounds": {
+    "viewport": 1123,
+    "documentWidth": 1123,
+    "overflow": []
+  },
+  "externalRequests": [],
+  "screenScreenshot": "downloaded-report-screen.png",
+  "pdf": "downloaded-report-A4.pdf",
+  "renderedPages": "report-print-pages/page-*.png",
+  "note": "Automated content and size assertions passed. Rendered pages still require visual inspection."
+}

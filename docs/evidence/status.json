@@ -1,5 +1,5 @@
 {
-  "stage": "source-review-ready",
+  "stage": "hosted-verified",
   "date": "2026-10-04",
   "local": {
     "build": "passed",
@@ -18,7 +18,7 @@
     "zipConsumer": "passed",
     "browserCollection": {
       "status": "passed",
-      "count": 14
+      "count": 15
     },
     "browserExecution": "not-run",
     "nativeFixtureValidation": "passed",
@@ -32,6 +32,24 @@
       "packs": 120
     }
   },
-  "hostedCI": "not-run",
-  "publication": "not-performed"
+  "hostedCI": {
+    "repository": "https://github.com/Masanori-Spec/when-fold",
+    "run": "https://github.com/Masanori-Spec/when-fold/actions/runs/37209599757",
+    "sourceCommit": "4eecbc7652084eb7aac3e0bc93aab759eded3422",
+    "status": "success",
+    "jobs": {
+      "unit-and-upstream-oracle (22)": "success",
+      "unit-and-upstream-oracle (24)": "success",
+      "sandbox-browser-and-native-editor": "success"
+    },
+    "browserTests": 15,
+    "nativeRealKeypresses": 24,
+    "artifactId": 11306106234,
+    "artifactSha256": "ee969286ba3ae130adf4b44e4de965068a3bb052f918105870b039bc00a8446c"
+  },
+  "publication": "public",
+  "visualReview": {
+    "status": "passed",
+    "details": "hosted/visual-review.json"
+  }
 }

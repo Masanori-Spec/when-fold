@@ -70,7 +70,21 @@ Browser and native-editor tests require a sandbox-capable host. The checked-in w
 
 The mandatory independent oracle uses hash-pinned, unmodified Microsoft VS Code **1.96.4** sources, including `ContextKeyExpr`, `KeybindingParser`, `USLayoutResolvedKeybinding`, and `KeybindingResolver`. It reads the actual artifact JSON and compares winners, args and fall-through over all modeled scenarios, also with reversed export order. The production parser/compiler is separately implemented and does not import upstream resolver code.
 
-[Verification status](docs/verification.md) separates passed unit/oracle checks from browser/native stages not run locally. Prepared CI is not evidence of a successful hosted run.
+[Verified hosted run](https://github.com/Masanori-Spec/when-fold/actions/runs/37209599757) passed all three jobs at commit `4eecbc7652084eb7aac3e0bc93aab759eded3422`: 146 tests on Node 22 and 24, the independent upstream/differential checks, **15/15 sandboxed browser scenarios**, actual-download oracle checks, and **24 real keypresses in official VS Code 1.96.4** using disposable profiles. The actual browser-downloaded report was rendered offline into a three-page A4 landscape PDF; all pages and JA/EN desktop/mobile screenshots were inspected. No browser or editor sandbox bypass is used. [Evidence and scope](docs/verification.md)
+
+### Actual screenshots
+
+Synthetic fixture from the linked passing run:
+
+![WhenFold Japanese desktop with explicit priority and one behavior change](docs/evidence/hosted/desktop-ja.png)
+
+<details><summary>Japanese mobile layout at 390px</summary>
+
+![WhenFold Japanese mobile layout](docs/evidence/hosted/mobile-ja.png)
+
+</details>
+
+[Actual exported report, printed to A4 PDF](docs/evidence/hosted/downloaded-report-A4.pdf)
 
 ## Safety and licensing
 
