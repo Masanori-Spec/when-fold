@@ -1,0 +1,92 @@
+name: Verify WhenFold
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  unit-and-upstream-oracle:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+      - run: npm run test:oracle
+      - run: npm run test:review
+      - run: node scripts/benchmark.mjs
+      - name: Validate harmless native fixture without launching an editor
+        run: node tools/native.mjs --validate
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: whenfold-unit-node-${{ matrix.node }}
+          path: |
+            generated/
+            test-results/
+          if-no-files-found: warn
+  sandbox-browser-and-native-editor:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    env:
+      BASE_PATH: /when-fold/
+      BASE_URL: http://127.0.0.1:4173/when-fold/
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --ignore-scripts
+      - name: Check lockfile-pinned browser harness
+        run: node --input-type=module -e 'import { createRequire } from "node:module"; const require = createRequire(import.meta.url); if (require("@playwright/test/package.json").version !== "1.56.0") throw new Error("Expected Playwright 1.56.0");'
+      - run: npx --no-install playwright install --with-deps chromium
+      - name: Prepare native desktop fixture dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y xvfb xdotool imagemagick libasound2 libgbm1 libgtk-3-0 libnss3 libx11-xcb1 fonts-noto-cjk
+      - run: npm run build
+      - name: Real sandboxed Chromium and actual downloaded-artifact oracle
+        run: |
+          mkdir -p test-results/browser
+          npm run serve > test-results/browser/server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          ready=0
+          for i in $(seq 1 30); do
+            if curl --fail --silent "$BASE_URL" > /dev/null; then ready=1; break; fi
+            sleep 1
+          done
+          test "$ready" = 1
+          npm run test:browser
+      - name: Official pinned VS Code, disposable profiles, actual exported pack and keypresses
+        env:
+          WHENFOLD_ARTIFACT_DIR: test-results/browser/actual-artifacts
+        run: xvfb-run -a npm run test:native
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: whenfold-browser-and-editor-evidence
+          path: |
+            test-results/
+            generated/
+          if-no-files-found: warn
