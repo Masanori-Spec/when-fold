@@ -63,7 +63,7 @@ jobs:
       - name: Prepare native desktop fixture dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install --no-install-recommends -y xvfb xdotool imagemagick libasound2 libgbm1 libgtk-3-0 libnss3 libx11-xcb1 fonts-noto-cjk
+          sudo apt-get install --no-install-recommends -y xvfb xdotool imagemagick libasound2 libgbm1 libgtk-3-0 libnss3 libx11-xcb1 fonts-noto-cjk poppler-utils
       - run: npm run build
       - name: Real sandboxed Chromium and actual downloaded-artifact oracle
         run: |
