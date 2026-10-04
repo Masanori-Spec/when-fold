@@ -1,0 +1,10 @@
+{
+  "version": "1.96.4",
+  "commit": "cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba",
+  "platform": "linux-x64",
+  "metadataUrl": "https://update.code.visualstudio.com/api/versions/1.96.4/linux-x64/stable",
+  "url": "https://vscode.download.prss.microsoft.com/dbazure/download/stable/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/code-stable-x64-1736989961.tar.gz",
+  "sha256": "36afc71e07ad0d94ba4f2e4ae173209d39727f33c0adc30f6b55b5599220373f",
+  "license": "Microsoft Visual Studio Code product license, separate from MIT upstream source",
+  "licenseUrl": "https://code.visualstudio.com/license"
+}

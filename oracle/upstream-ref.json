@@ -1,0 +1,10 @@
+{
+  "ref": "refs/tags/1.96.4",
+  "node_id": "MDM6UmVmNDE4ODE5MDA6cmVmcy90YWdzLzEuOTYuNA==",
+  "url": "https://api.github.com/repos/microsoft/vscode/git/refs/tags/1.96.4",
+  "object": {
+    "sha": "cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba",
+    "type": "commit",
+    "url": "https://api.github.com/repos/microsoft/vscode/git/commits/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba"
+  }
+}

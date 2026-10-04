@@ -1,0 +1,8 @@
+{
+  "status": "not-run-locally",
+  "reason": "The dot cloud browser/Electron sandbox is unavailable for local launches; no --no-sandbox workaround is used.",
+  "requiredEnvironment": "GitHub-hosted ubuntu-22.04, non-root, Xvfb, xdotool, sandbox enabled",
+  "command": "xvfb-run -a npm run test:native",
+  "resultArtifact": "generated/native-report.json",
+  "note": "A prepared harness or source-level oracle pass is not native editor verification. Only a CI run with status passed in native-report.json establishes a native pass."
+}

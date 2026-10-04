@@ -1,0 +1,344 @@
+{
+  "repository": "https://github.com/microsoft/vscode",
+  "version": "1.96.4",
+  "commit": "cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba",
+  "license": "MIT",
+  "files": [
+    {
+      "path": "LICENSE.txt",
+      "sha256": "9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9",
+      "bytes": 1088,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/LICENSE.txt"
+    },
+    {
+      "path": "src/vs/base/common/arrays.ts",
+      "sha256": "3d020bc93c949375fcc25df594482f1ca31937325d3df0219b2a5ae21674053c",
+      "bytes": 26489,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/arrays.ts"
+    },
+    {
+      "path": "src/vs/base/common/arraysFind.ts",
+      "sha256": "26be6962f8931dd2b3e5dd3260e9893e4174cade7dfea6013a63c30bd1df046f",
+      "bytes": 6504,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/arraysFind.ts"
+    },
+    {
+      "path": "src/vs/base/common/assert.ts",
+      "sha256": "9473b453080d475aba78b82c0a13fd87791b4a039c6f9e3b90cd66b117a7d23c",
+      "bytes": 2152,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/assert.ts"
+    },
+    {
+      "path": "src/vs/base/common/cache.ts",
+      "sha256": "4863160542640d5db15beb98d9bb5c09bb384c2daebbb2c68ba61f37de05bd97",
+      "bytes": 3284,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/cache.ts"
+    },
+    {
+      "path": "src/vs/base/common/cancellation.ts",
+      "sha256": "da7870430216b685b4eafb9b7b75e22661d8a2c19d9d19f59ef395768a624b43",
+      "bytes": 4047,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/cancellation.ts"
+    },
+    {
+      "path": "src/vs/base/common/charCode.ts",
+      "sha256": "ddb45e08c0f66a253a52ca5eaafc705687ceda45229ce5c9a1aa64d0fb34e510",
+      "bytes": 18958,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/charCode.ts"
+    },
+    {
+      "path": "src/vs/base/common/collections.ts",
+      "sha256": "f4aee97606e583e8c5e715f9754b345a076da42f64df720ee3a98de7d4ace9ed",
+      "bytes": 3390,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/collections.ts"
+    },
+    {
+      "path": "src/vs/base/common/equals.ts",
+      "sha256": "c9373cc151c9b7e0e4f13f4619ec1d5eeb0365fe94131f89eb5c3fa4a397de0c",
+      "bytes": 4532,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/equals.ts"
+    },
+    {
+      "path": "src/vs/base/common/errors.ts",
+      "sha256": "ecbd86d9ebd53cfa8076644ea40b07d1f6ab73b4ccca682768a2e01bd1438461",
+      "bytes": 7808,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/errors.ts"
+    },
+    {
+      "path": "src/vs/base/common/event.ts",
+      "sha256": "545f395ee87f5697785fc55c96596d025870d7e296dca958d8179ff0207efdd2",
+      "bytes": 56423,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/event.ts"
+    },
+    {
+      "path": "src/vs/base/common/functional.ts",
+      "sha256": "976c27e04b82913ad0e068cce30d74212c2c86a86f866038156b6fd9dca27610",
+      "bytes": 922,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/functional.ts"
+    },
+    {
+      "path": "src/vs/base/common/iterator.ts",
+      "sha256": "f99de85a808a41c3d8286233fa3077aaffe4409d8c90a65740864d7c310bb91d",
+      "bytes": 4567,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/iterator.ts"
+    },
+    {
+      "path": "src/vs/base/common/keyCodes.ts",
+      "sha256": "3d32640e295620afb7260502b6879887ad039098e8ee07f0bdfcd54afc108d6c",
+      "bytes": 32701,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/keyCodes.ts"
+    },
+    {
+      "path": "src/vs/base/common/keybindingLabels.ts",
+      "sha256": "47ca50a2fa0d1c11c0d09bffb7818092991ce2e6ea014f93b171a04b43a128db",
+      "bytes": 6305,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/keybindingLabels.ts"
+    },
+    {
+      "path": "src/vs/base/common/keybindingParser.ts",
+      "sha256": "35988ab2c80b6148e736f458f4100ab81b3014a404d9266819ea76322bdee192",
+      "bytes": 2741,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/keybindingParser.ts"
+    },
+    {
+      "path": "src/vs/base/common/keybindings.ts",
+      "sha256": "749f01eb9b25924d268fd330cb0963996725f5a0050264a1bb774bea72ee9ea4",
+      "bytes": 8447,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/keybindings.ts"
+    },
+    {
+      "path": "src/vs/base/common/lazy.ts",
+      "sha256": "b72dcaeb062f5198b43ffcf996dad4b564899566019b167bf61e8c0ad511e429",
+      "bytes": 1237,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/lazy.ts"
+    },
+    {
+      "path": "src/vs/base/common/lifecycle.ts",
+      "sha256": "124a8f7b9f2bebd2822264a93f98711aebbda88b3dd94c7249a8e386fcdf5461",
+      "bytes": 21501,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/lifecycle.ts"
+    },
+    {
+      "path": "src/vs/base/common/linkedList.ts",
+      "sha256": "1f4a11b85aeb5b52a2903631e345e3a5554aa7d3a781ed46bc9d921309430a94",
+      "bytes": 3089,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/linkedList.ts"
+    },
+    {
+      "path": "src/vs/base/common/map.ts",
+      "sha256": "14d38ade0f7c3c5d69f6472720bb660262f49f8b46a04c89096859d009d845ee",
+      "bytes": 21540,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/map.ts"
+    },
+    {
+      "path": "src/vs/base/common/marshallingIds.ts",
+      "sha256": "25a767f436ce82d6bb8dfe4e2053552a6f1a8f8ba0187a0f4c9d37d3db762c72",
+      "bytes": 807,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/marshallingIds.ts"
+    },
+    {
+      "path": "src/vs/base/common/observable.ts",
+      "sha256": "2789ae708aa659732c5f7aa2ff2d6d6ca36e913ad07d321cb16525a9418fc6ec",
+      "bytes": 479,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/observable.ts"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/api.ts",
+      "sha256": "d9af53e96e58759f8202ccb957ea9a74604c836c157920614e11c587837a526c",
+      "bytes": 1153,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/observableInternal/api.ts"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/autorun.ts",
+      "sha256": "9b4558f1bca31072a84d76b747a8db38371a2c3ce728cab30aeb5848b92503bd",
+      "bytes": 9895,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/observableInternal/autorun.ts"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/base.ts",
+      "sha256": "29f2d8351664fb4a9263cf637e28b7c3433beb7ff8d90ddb1db41109b7007b17",
+      "bytes": 16431,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/observableInternal/base.ts"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/commonFacade/cancellation.ts",
+      "sha256": "387daef6dc801c66d1a781981cde1ba11a3f1c18821c2545b2135bd10d4a0c1b",
+      "bytes": 490,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/observableInternal/commonFacade/cancellation.ts"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/commonFacade/deps.ts",
+      "sha256": "b331b8e0da64a7cfd0edd307bfb180e70509fa6b7a148b4f5e2ee0764d254681",
+      "bytes": 731,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/observableInternal/commonFacade/deps.ts"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/debugName.ts",
+      "sha256": "3eca4b8efee9b55412e814a98ffd2ee6a52da95d87cf0a33e7e55c81de62d9f7",
+      "bytes": 4074,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/observableInternal/debugName.ts"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/derived.ts",
+      "sha256": "7d3c7443b4f907ccf6560d03851c191fe1811bd59d5a37e2e30a30a1d67eb527",
+      "bytes": 15372,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/observableInternal/derived.ts"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/index.ts",
+      "sha256": "b7c288f824df3b62c8159e3d9478bce83b2de0cbbc901bd11a348ee34c8d23eb",
+      "bytes": 2152,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/observableInternal/index.ts"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/lazyObservableValue.ts",
+      "sha256": "54064a194687ec9847a682ea4ee179060244586e6f99fff4d8e8a37f51b809de",
+      "bytes": 3816,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/observableInternal/lazyObservableValue.ts"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/logging.ts",
+      "sha256": "605b1d4b0b2ff7121a80bbee8aa83bd83e62c5b9fb3b309c256690155734ac71",
+      "bytes": 8842,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/observableInternal/logging.ts"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/promise.ts",
+      "sha256": "78f44162d89a8892b2cb217a3e876cb19c45ca5b1034dca62f3bbc100f7593b6",
+      "bytes": 3160,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/observableInternal/promise.ts"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/utils.ts",
+      "sha256": "845776353d6e2921e9c5160398ca9a04dc55f5732c72a693574d43d089ff9674",
+      "bytes": 18917,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/observableInternal/utils.ts"
+    },
+    {
+      "path": "src/vs/base/common/observableInternal/utilsCancellation.ts",
+      "sha256": "84f50e8aac6e1d9c156082e2cf0f5c75c34422dd291c8467b7993dea207a63ac",
+      "bytes": 3973,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/observableInternal/utilsCancellation.ts"
+    },
+    {
+      "path": "src/vs/base/common/path.ts",
+      "sha256": "045486a7ce5f39cf8d16675700e2e90751eab96f7d217ba35d9e380b4343e60f",
+      "bytes": 42219,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/path.ts"
+    },
+    {
+      "path": "src/vs/base/common/platform.ts",
+      "sha256": "98ef756ddb4e64e097df685ac67ab504a28dd50d866f86e2a7378c94dc7f24b7",
+      "bytes": 8641,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/platform.ts"
+    },
+    {
+      "path": "src/vs/base/common/process.ts",
+      "sha256": "845d4301a2d729b6305881b897691e316c10321314c1271a7d1640c41dd89e40",
+      "bytes": 2330,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/process.ts"
+    },
+    {
+      "path": "src/vs/base/common/sequence.ts",
+      "sha256": "9f7a0e0ec46e0665af3a2927b99d4b34231b0026dc2124cf72f0356456347326",
+      "bytes": 1167,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/sequence.ts"
+    },
+    {
+      "path": "src/vs/base/common/stopwatch.ts",
+      "sha256": "5b0b7fcdb4af4473dd91a5ddc24916f4b1d07c4f2748085e79260cf319a8b810",
+      "bytes": 1346,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/stopwatch.ts"
+    },
+    {
+      "path": "src/vs/base/common/strings.ts",
+      "sha256": "88f2644577e2bf476f49d323d0afa9d7364bed51485d6bcdfcf7db04dab2ae96",
+      "bytes": 88368,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/strings.ts"
+    },
+    {
+      "path": "src/vs/base/common/symbols.ts",
+      "sha256": "bf83fa91c9eac09fd8f8da74111f12784978ff154d00c48f11c8bcce04f348d2",
+      "bytes": 480,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/symbols.ts"
+    },
+    {
+      "path": "src/vs/base/common/uint.ts",
+      "sha256": "0b1102ade974b21bd46bd789027c2dd7959366202e9b87287b13be0a8cf3b05a",
+      "bytes": 1583,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/uint.ts"
+    },
+    {
+      "path": "src/vs/base/common/uri.ts",
+      "sha256": "4369ae3ad11dddac2f76c89b6e73d33cbceb519054f3460cd4e1f7a4ab475f59",
+      "bytes": 22643,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/base/common/uri.ts"
+    },
+    {
+      "path": "src/vs/nls.messages.ts",
+      "sha256": "eec1848f47e5a216225335524eacb83343491b1a1184d2049f86b55ec05d290d",
+      "bytes": 841,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/nls.messages.ts"
+    },
+    {
+      "path": "src/vs/nls.ts",
+      "sha256": "c5f5773ca1ff24c06edd31f617e2509766672c8a1549ef9d163b5bad2e977741",
+      "bytes": 8157,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/nls.ts"
+    },
+    {
+      "path": "src/vs/platform/contextkey/common/contextkey.ts",
+      "sha256": "f52040bf2688df65017e34dfdb0871d5bbbf6deb391ed6a9ec9830f717478894",
+      "bytes": 59560,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/platform/contextkey/common/contextkey.ts"
+    },
+    {
+      "path": "src/vs/platform/contextkey/common/scanner.ts",
+      "sha256": "13e89b22f41e713581d79e39b9eea224df80daa360c1b3668b9fac187ff5ee29",
+      "bytes": 11229,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/platform/contextkey/common/scanner.ts"
+    },
+    {
+      "path": "src/vs/platform/instantiation/common/descriptors.ts",
+      "sha256": "34c4420452a6f2a20fd9c0acba0cc9053568e2270746832cef8e418c78c63c4a",
+      "bytes": 821,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/platform/instantiation/common/descriptors.ts"
+    },
+    {
+      "path": "src/vs/platform/instantiation/common/instantiation.ts",
+      "sha256": "19853643f31a9a733407d7a04a760d23ed12c757cf3d5bce7f1ce5405b9215ff",
+      "bytes": 4121,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/platform/instantiation/common/instantiation.ts"
+    },
+    {
+      "path": "src/vs/platform/instantiation/common/serviceCollection.ts",
+      "sha256": "be9a3d6b1d53412f259aa39e23eada52fcf81af45d5d2113686965251e21d38f",
+      "bytes": 1079,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/platform/instantiation/common/serviceCollection.ts"
+    },
+    {
+      "path": "src/vs/platform/keybinding/common/baseResolvedKeybinding.ts",
+      "sha256": "518ea7d95bbbb2a18bb3562ff17bbcb55d3374fcf8320e74719fcf568f5057ad",
+      "bytes": 3417,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/platform/keybinding/common/baseResolvedKeybinding.ts"
+    },
+    {
+      "path": "src/vs/platform/keybinding/common/keybindingResolver.ts",
+      "sha256": "1b3f84a5f70855fcf0792bd0959f6c234711804a6ec7a0dfa0fe104d45f348bf",
+      "bytes": 12425,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/platform/keybinding/common/keybindingResolver.ts"
+    },
+    {
+      "path": "src/vs/platform/keybinding/common/resolvedKeybindingItem.ts",
+      "sha256": "54c45ca4f02d68e3ee216d7795b136731388c2cb8145ddc82b03268b2e4bd02f",
+      "bytes": 2220,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/platform/keybinding/common/resolvedKeybindingItem.ts"
+    },
+    {
+      "path": "src/vs/platform/keybinding/common/usLayoutResolvedKeybinding.ts",
+      "sha256": "389a53e987ea9853e8e6e3721208e3c5943794660ecc976fd2ce88fc030ca7b5",
+      "bytes": 6811,
+      "url": "https://raw.githubusercontent.com/microsoft/vscode/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/src/vs/platform/keybinding/common/usLayoutResolvedKeybinding.ts"
+    }
+  ]
+}
